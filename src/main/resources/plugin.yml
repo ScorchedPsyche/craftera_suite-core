@@ -1,4 +1,4 @@
-name: CraftEra Suite - Core
+name: craftera_suite-core
 version: ${project.version}
 main: com.github.scorchedpsyche.craftera_suite.core.Main
 api-version: 1.16
