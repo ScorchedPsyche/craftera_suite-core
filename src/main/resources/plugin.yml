@@ -1,8 +1,9 @@
 name: craftera_suite-core
 version: ${project.version}
-main: com.github.scorchedpsyche.craftera_suite.core.Main
+loadbefore: [craftera_suite-baby_entities, craftera_suite-wandering_trades]
+main: com.github.scorchedpsyche.craftera_suite.core.CraftEraSuiteCore
 api-version: 1.16
-prefix: [CraftEra Suite - Core]
+prefix: CraftEra Suite - Core
 authors: [ScorchedPsyche]
 description: Manager and dependency for all other CraftEra suite plugin modules.
 website: https://github.com/ScorchedPsyche
