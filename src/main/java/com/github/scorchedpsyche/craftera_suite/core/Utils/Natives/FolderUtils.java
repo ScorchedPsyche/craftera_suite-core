@@ -7,16 +7,30 @@ import java.util.regex.Pattern;
 import com.github.scorchedpsyche.craftera_suite.core.CraftEraSuiteCore;
 
 import org.bukkit.ChatColor;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class FolderUtils {
+    public File cesRootFolder;
+
     private CraftEraSuiteCore plugin;
     private File pluginsFolder;
-    public File cesRootFolder;
 
     public FolderUtils(CraftEraSuiteCore plugin) {
         this.plugin = plugin;
         pluginsFolder = getPluginsFolder();
         cesRootFolder = getOrCreateCesRootFolder();
+    }
+
+    public File getOrCreatePluginSubfolder(JavaPlugin plugin)
+    {
+        File pluginSubfolder = new File(cesRootFolder.toString() + File.separator + plugin.getName().split("-")[1]);
+
+        if( !pluginSubfolder.exists() )
+        {
+            pluginSubfolder.mkdirs();
+        }
+
+        return pluginSubfolder;
     }
 
     /**
